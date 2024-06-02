@@ -1,0 +1,14 @@
+version: '3.2'
+services:
+  app:
+    container_name: app_runner
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: zero0242/node-image-edition:1.0.0
+    # restart: always
+    # La bandera de -dit para entrar al contenedor
+    # stdin_open: true
+    # tty: true
+    ports:
+      - "3000:3000"
