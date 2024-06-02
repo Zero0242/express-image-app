@@ -1,0 +1,22 @@
+{
+	"name": "node-image-edition",
+	"version": "1.0.0",
+	"main": "index.js",
+	"author": "Zero0242 <pedrocorream66@gmail.com>",
+	"license": "MIT",
+	"scripts": {
+		"start": "node ./src/app.js",
+		"dev": "nodemon ./src/app.js"
+	},
+	"dependencies": {
+		"@imgly/background-removal-node": "^1.4.5",
+		"dotenv": "^16.4.5",
+		"env-var": "^7.5.0",
+		"express": "^4.19.2",
+		"express-fileupload": "^1.5.0",
+		"uuid": "^9.0.1"
+	},
+	"devDependencies": {
+		"nodemon": "^3.1.2"
+	}
+}

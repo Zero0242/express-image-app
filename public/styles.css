@@ -1,0 +1,10 @@
+.preview {
+	max-height: 30rem;
+	max-width: 40rem;
+	margin: 1rem;
+}
+
+.border {
+	border: 0.25rem;
+	border-color: black;
+}
