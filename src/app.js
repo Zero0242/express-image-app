@@ -2,6 +2,7 @@ const { PORT } = require('./config')
 const { removeBackground } = require("@imgly/background-removal-node");
 const downloadBlobFromUrl = require('./utils/get-image-blob.js')
 const express = require('express')
+const errorHandler = require('./middleware/error-handler.js')
 const fileToBase64 = require('./utils/png-to-base64.js')
 const fileupload = require("express-fileupload");
 const morgan = require('morgan')
@@ -9,10 +10,11 @@ const morgan = require('morgan')
 const app = express()
 
 app.use(morgan('dev'))
-app.use(fileupload())
+app.use(fileupload({ debug: true }))
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 app.use(express.static(`${process.cwd()}/public/`))
+app.use(errorHandler())
 
 app.post('/remove-bg', async (req, res) => {
     if (!req.files || !req.files.archivo) {
