@@ -5,7 +5,7 @@ function errorHandler() {
             const { expected, limit, type } = err
             return res.status(400).json({ error: 'Archivo demasiado grande', expected, limit, type })
         }
-        return res.status(500).json({ error: 'Internal Server Error' });
+        return res.status(500).json({ error: 'Internal Server Error', ...err });
     }
 }
 

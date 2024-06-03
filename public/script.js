@@ -37,7 +37,8 @@ form.onsubmit = async (ev) => {
     ev.preventDefault()
     if (!input.value) return triggerError('Debe ingresar un valor')
     const form = JSON.stringify({ url: input.value })
-    handlePost('/remove-url', form)
+    const headers = { 'Content-Type': 'application/json' }
+    handlePost('/remove-url', form, headers)
 }
 
 fileInput.onchange = () => {
@@ -80,16 +81,15 @@ function setLoading(state = true) {
  * Handler para las request del formulario
  * @param {string} link 
  * @param {BodyInit} body 
+ * @param {HeadersInit} headers 
  * @returns 
  */
-async function handlePost(link, body) {
+async function handlePost(link, body, headers) {
     try {
 
         setLoading(true)
         const resp = await fetch(link, {
-            body, method: "POST", headers: {
-                'Content-Type': 'application/json'
-            }
+            body, method: "POST", headers
         })
         setLoading(false)
         if (!resp.ok) return triggerError("Error con la petición");
