@@ -8,3 +8,8 @@
 	border: 0.25rem;
 	border-color: black;
 }
+
+#result {
+	background-image: url(assets/troll.jpeg);
+	background-size: contain;
+}
