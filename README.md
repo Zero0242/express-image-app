@@ -35,9 +35,9 @@ Algunos scripts que pueden ser utilizados
 
 Otros scripts que pueden usar para fines de desarrollo, (acciones de paquetes)
 
-| Comando | Descripcion                                                                |
-| ------- | -------------------------------------------------------------------------- |
-| `....`  | Insertar scripts que usen los paquetes de terceros si es necesario hacerlo |
+| Comando                            | Descripcion      |
+| ---------------------------------- | ---------------- |
+| `docker compose build --tag app .` | Construir la app |
 
 ## Documentacion
 
